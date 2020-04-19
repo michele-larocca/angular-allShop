@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 const USER_OK = 'michele';
 const PASS_OK = '123';
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   authenticated = false;
   message = "";
 
-  constructor() { }
+  constructor(private rout: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,11 +29,7 @@ export class LoginComponent implements OnInit {
       this.message = "Insert User name and password to enter !";
     }
     else if(this.userId === USER_OK && this.password === PASS_OK) {
-      this.message = "User logged successfully"; 
-
-      setTimeout(()=>{
-        this.message="";
-      }, 2000);
+      this.rout.navigate(['welcome']);
     } 
     else {
       this.authenticated = false;
