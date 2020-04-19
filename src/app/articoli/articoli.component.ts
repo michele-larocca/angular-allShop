@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+class Articoli {
+  constructor(
+    public codart: string,
+    public desc: string,
+    public unit: number,
+    public prezzo: number,
+    public isActive: boolean,
+    public date: Date
+  ){
+    
+  }
+}
+
 @Component({
   selector: 'app-articoli',
   templateUrl: './articoli.component.html',
@@ -8,11 +21,11 @@ import { Component, OnInit } from '@angular/core';
 export class ArticoliComponent implements OnInit {
 
   items = [
-    {codart: 'AA34567e231', desc: 'PASTA INTEGRALE PENNE 1 KG', unit: 21, prezzo: 1.23},
-    {codart: 'AA34567e231', desc: 'FARINA GRANO TENERO OO DA 1 KG', unit: 65, prezzo: 0.83},
-    {codart: 'AA34567e231', desc: 'SUCCO DI FRUTTA - MELOGRANO', unit: 15, prezzo: 1.95},
-    {codart: 'AA34567e231', desc: 'BAGNOSCHIUMA DA 0.75 LT', unit: 2, prezzo: 1.55},
-    {codart: 'AA34567e231', desc: 'BURRO 250 GR', unit: 12, prezzo: 2.26}
+    new Articoli('AA34567e231','PASTA INTEGRALE PENNE 1 KG', 21,1.23, true, new Date),
+    new Articoli('AA34567e231', 'FARINA GRANO TENERO OO DA 1 KG',65,0.83, false, new Date),
+    new Articoli('AA34567e231', 'SUCCO DI FRUTTA - MELOGRANO',15,1.95, true, new Date),
+    new Articoli('AA34567e231', 'BAGNOSCHIUMA DA 0.75 LT',2,1.55, false, new Date),
+    new Articoli('AA34567e231', 'BURRO 250 GR',12,2.26, true, new Date),
   ];
 
   constructor() { }
