@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   authenticated = false;
   message = "";
 
-  constructor(private rout: Router) { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.message = "Insert User name and password to enter !";
     }
     else if(this.userId === USER_OK && this.password === PASS_OK) {
-      this.rout.navigate(['welcome']);
+      this.route.navigate(['welcome', this.userId]);
     } 
     else {
       this.authenticated = false;
