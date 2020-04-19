@@ -1,0 +1,82 @@
+<style>
+.login-block{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  color: white;
+  margin: auto auto;
+}
+.login-center-content {
+  background-color: rgb(89, 71, 201);
+  border-radius: 3px;
+  margin: auto 0;
+  padding: 50px;
+}
+.login-item {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+.login-label {
+  width: 150px;
+}
+.login-input {
+  width: 200px;
+}
+input {
+  width: 100%;
+}
+.login-button{
+  width: 150px;
+  margin-top: 15px;
+  background-color: beige;
+  color: darkblue;
+  border-radius: 3px;
+  border-color:burlywood;
+}
+.message {
+  font-weight: bold;
+  color: rgb(255, 19, 19);
+  margin: 15px 0;
+}
+</style>
+<div class="login-block">
+  <div class="login-center-content">
+    <div class="login-item">
+      <div class="login-label">
+        <label for="userId">User: </label>
+      </div>
+      <div class="login-input">
+        <input type="text" id="userId" [(ngModel)]="userId" placeholder="user name">
+      </div>
+    </div>
+    <div class="login-item">
+      <div class="login-label">
+        <label for="password">Password: </label>
+      </div>
+      <div class="login-input">
+        <input type="password" id="password" [(ngModel)]="password" placeholder="password">
+      </div>
+    </div>
+
+    <!-- TEST DATA BINDING -->
+    <!-- <div class="login-item">
+      <div class="login-label">
+        <label for="user">User: </label>
+      </div>
+      <div>{{userId}}</div>
+    </div>
+    <div class="login-item">
+      <div class="login-label">
+        <label for="password">Password: </label>
+      </div>
+      <div>{{password}}</div>
+    </div> -->
+
+    <div class="login-item" *ngIf="message">
+      <div class="message">{{message}}</div>
+    </div>
+    <button (click)=loginAut() class="login-button">Login</button>
+  </div>
+</div>
