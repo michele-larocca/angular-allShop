@@ -8,6 +8,7 @@ import { ArticoliComponent } from './articoli/articoli.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'index', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'welcome/:userId', component: WelcomeComponent},
   {path: 'articoli', component: ArticoliComponent},

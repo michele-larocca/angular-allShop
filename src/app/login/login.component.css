@@ -1,0 +1,40 @@
+.login-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: auto auto;
+}
+.login-center-content {
+  background-color: rgb(89, 71, 201);
+  border-radius: 3px;
+  margin: auto 0;
+  padding: 50px;
+}
+.login-item {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+.login-label {
+  width: 150px;
+}
+.login-input {
+  width: 200px;
+}
+input {
+  width: 100%;
+}
+.login-button{
+  width: 150px;
+  margin-top: 15px;
+  background-color: beige;
+  color: darkblue;
+  border-radius: 3px;
+  border-color:burlywood;
+}
+.message {
+  font-weight: bold;
+  color: rgb(255, 19, 19);
+  margin: 15px 0;
+}
