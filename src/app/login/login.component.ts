@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-const USER_OK = 'michele';
-const PASS_OK = '123';
+import { AuthAppServiceService } from '../servicies/auth-app-service.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +15,7 @@ export class LoginComponent implements OnInit {
   authenticated = false;
   message = "";
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private authentication: AuthAppServiceService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +26,7 @@ export class LoginComponent implements OnInit {
     if(!this.userId || !this.password) {
       this.message = "Insert User name and password to enter !";
     }
-    else if(this.userId === USER_OK && this.password === PASS_OK) {
+    else if(this.authentication.executeLogin(this.userId, this.password)) {
       this.route.navigate(['welcome', this.userId]);
     } 
     else {
