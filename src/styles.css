@@ -47,19 +47,6 @@ html, body {
     text-align: center;
 }
 
-.form-fooder {
-	padding-top: 50px;
-}
-
-footer p {
-	display: inline;
-	margin-left: 10px;
-}
-
-footer a {
-	color: inherit;
-}
-
 .jumbotron-billboard .img {
 	margin-bottom: 0px;
 	opacity: 0.2;
