@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ArticoliComponent } from './articoli/articoli.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'welcome/:userId', component: WelcomeComponent},
   {path: 'articoli', component: ArticoliComponent},
+  {path: 'logout', component: LogoutComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

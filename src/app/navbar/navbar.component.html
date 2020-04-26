@@ -73,7 +73,7 @@
               <input type="hidden" name="logout" value="${User}">
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
           </form>
-        <a class="dropdown-item" href="" onclick="$('#myHiddenFormId').submit(); return false;" title="Logout">Logout</a>
+        <a class="dropdown-item" *ngIf="showLogout()" routerLink="/logout" title="Logout">Logout {{whoIsLogged()}}</a>
         </div>
       </div>
   </div>
