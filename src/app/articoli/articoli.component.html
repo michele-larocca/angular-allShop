@@ -1,4 +1,4 @@
-<h1>Alticoli disponibili</h1>
+<h1>Alticoli disponibili {{totalItems}}</h1>
 <table border=1>
   <caption>Alimentari</caption>
   <thead>
@@ -12,13 +12,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items">
-      <td>{{item.codart}}</td>
-      <td>{{item.desc}}</td>
-      <td>{{item.unit}}</td>
-      <td>{{item.prezzo}}</td>
-      <td>{{item.isActive}}</td>
-      <td>{{item.date | date}}</td>
+    <tr *ngFor="let item of items | paginate: { itemsPerPage: rowDisplayed, currentPage: pageSelected }">
+      <td>{{item.codArt}}</td>
+      <td>{{item.descrizione}}</td>
+      <td>{{item.pzCart}}</td>
+      <td>{{item.prezzo | currency : 'EUR'}}</td>
+      <td>{{item.idStatoArt}}</td>
+      <td>{{item.dataCreaz | date}}</td>
     </tr>
   </tbody>
 </table>
+<div class="clearfix">
+  <pagination-controls 
+    (pageChange)="pageSelected = $event"
+    previousLabel="Precedente"
+    nextLabel="Successivo"
+  >
+  </pagination-controls>
+</div>
