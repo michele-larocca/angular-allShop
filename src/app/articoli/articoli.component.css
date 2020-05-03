@@ -1,0 +1,23 @@
+.table-filter {
+  height:30px;
+  margin-bottom:30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-type-block{
+  flex-grow: 1;
+}
+
+.search-block {
+  width: 250px;
+}
+
+.button-search {
+  margin: 1px 0 10px 10px;
+}
+
+.img-search {
+  width:15px;
+  height:15px;
+}
