@@ -2,13 +2,16 @@
   <div class="filter-type-block"></div>
   <div class="search-block">
     <input type="text" [(ngModel)]="filter" />
-    <button (click)=refreshTable()  class="button-search btn btn-primary btn-sm">
+    <button (click)="refreshTable()" class="button-search btn btn-primary btn-sm">
         <img class="img-search" src="/assets/images/search-outline.svg">
     </button>
   </div>
 </div>
 
 <h4>Alticoli disponibili {{totalItems}}</h4>
+<div class="aler alert-success" *ngIf='message'>
+  {{message}}
+</div>
 <table style="width:100%" class="table-sm table-striped table-bordered table-hover">
   <caption>Alimentari</caption>
   <thead>
@@ -19,6 +22,8 @@
       <th>Prezzo</th>
       <th>Attivo</th>
       <th>Data</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +33,17 @@
       <td>{{item.pzCart}}</td>
       <td>{{item.prezzo | currency : 'EUR'}}</td>
       <td>{{item.idStatoArt}}</td>
-      <td>{{item.dataCreaz | date}}</td>
+      <td>{{item.dataCreaz | date:'shortDate'}}</td>
+      <td>
+        <button (click)="edit(item.codArt)" class="btn btn-warning table-buttons">
+          <span class="oi oi-pencil"></span>Modifica
+        </button>
+      </td>
+      <td>
+        <button (click)="delete(item.codArt)" class="btn btn-danger table-buttons">
+          <span class="oi oi-trash"></span>Elimina
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
